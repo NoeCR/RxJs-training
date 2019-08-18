@@ -1,33 +1,42 @@
 <!doctype html>
 <html>
-
-<head>
+  <head>
     <title>RxJS School</title>
     <style>
-        body {
-            padding-left: 20px;
+        #scrollable-space{
+            height: 4000px;
         }
-        
-        #log-container {
-            padding: 20px;
-            font-size: 20px;
-        }
-        
-        #log-container>div {
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
 
-<body>
-    <br>
-    <h1>See the output below</h1>
-    <button id="action-btn">Start</button>
-    <button id="stop-btn">Stop</button>
-    <button id="data-btn">Get all promise</button>
-    <span></span>
+        #log-container{
+            position: fixed;
+            top: 40px;
+            right: 20px;
+        }
+        
+        #progress-bar {
+          position: fixed;
+          top: 0px;
+          left: 0px;
+          right: 0px;
+          width: 0px;
+          height: 12px;
+          background-color: #ff3535;
+        }
+
+        #footer{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+      </style>
+  </head>
+  <body>
+    <h1>Do some scroll</h1>
+    <div id="progress-bar"></div>
     <div id="log-container"></div>
-    <script src="main.js"></script>
-</body>
+    <div id="scrollable-space"></div>
+    <div id="footer">You've reached the end of the page</div>
 
+    <script src="main.js"></script>
+  </body>
 </html>
