@@ -8,17 +8,14 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./searchbox.component.scss']
 })
 export class SearchboxComponent implements OnInit {
-
-  @ViewChild('searchBox') public searchBox: NgModel;
+  @ViewChild('searchBox') public searchBox:NgModel;
   @Output() value: EventEmitter<string> = new EventEmitter();
-  public text: string = '';
-
+  public text:string = '';
+  
   constructor() { }
 
   ngOnInit() {
-    this.searchBox.valueChanges.pipe(
-      debounceTime(300)
-    )
+    this.searchBox.valueChanges.pipe(debounceTime(300))
     .subscribe(evt => this.value.emit(evt));
   }
 
